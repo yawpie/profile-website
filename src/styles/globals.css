@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -12,15 +8,61 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* dark mode override */
+:root {
+  --background: #ffffff;
+  --foreground: #1f2937;
+
+  --primary: #3b82f6; /* biru terang */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f3f4f6; /* abu terang */
+  --secondary-foreground: #1f2937;
+
+  --accent: #10b981; /* hijau emerald */
+  --accent-foreground: #ffffff;
+   --primary-hover: #1d4ed8; /* lebih gelap untuk hover */
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+
+  --primary: #2563eb; /* biru gelap */
+  --primary-foreground: #f1f5f9;
+
+  --secondary: #1e293b; /* abu gelap */
+  --secondary-foreground: #f1f5f9;
+
+  --accent: #059669; /* hijau tua */
+  --accent-foreground: #f1f5f9;
+  --primary-hover: #0ea5e9; /* lebih terang/gelap sesuai selera */
+}
+
+html {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body, div, section, nav, footer, main {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
