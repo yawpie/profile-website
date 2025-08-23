@@ -46,7 +46,7 @@ export default function Navbar() {
               onClick={() =>
                 setTheme(resolvedTheme === "dark" ? "light" : "dark")
               }
-              className="px-3 py-1 rounded-md border border-[var(--foreground)] text-[var(--foreground)] text-sm transition-colors duration-500 hover:bg-[var(--foreground)] hover:text-[var(--background)]"
+              className="px-3 py-1 rounded-md border border-[var(--foreground)] text-[var(--foreground)] text-sm hover:bg-[var(--foreground)] hover:text-[var(--background)]"
             >
               {resolvedTheme === "dark" ? "☀️ Light" : "🌙 Dark"}
             </button>
