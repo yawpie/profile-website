@@ -44,6 +44,9 @@ export default function Navbar() {
           <Link href="/projects" className="hover:text-indigo-500">
             Projects
           </Link>
+          <Link href="/articles" className="hover:text-indigo-500">
+            Articles
+          </Link>
           <Link href="/contact" className="hover:text-indigo-500">
             Contact
           </Link>

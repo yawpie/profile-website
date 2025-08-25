@@ -1,6 +1,13 @@
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { FaGithub, FaEnvelope, FaLinkedin, FaInstagram } from "react-icons/fa";
+import {
+  FaGithub,
+  FaEnvelope,
+  FaLinkedin,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { FaW } from "react-icons/fa6";
 
 export default function Contact() {
   const contacts = [
@@ -44,9 +51,9 @@ export default function Contact() {
 
   return (
     <>
-    <SEO 
-        title="Contact Me | Muhammad Rafi" 
-        description="Let’s connect via GitHub, LinkedIn, Instagram, or email. Reach out and say hi!" 
+      <SEO
+        title="Contact Me | Muhammad Rafi"
+        description="Let’s connect via GitHub, LinkedIn, Instagram, or email. Reach out and say hi!"
         url="https://muhammadrafi.dev/contact"
       />
       <motion.section
