@@ -1,14 +1,22 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [open, setOpen] = useState(false);
 
   // biar nggak error pas SSR
   useEffect(() => setMounted(true), []);
+
+  const menuVariants = {
+    hidden: { opacity: 0, y: -10, height: 0 },
+    visible: { opacity: 1, y: 0, height: "auto" },
+    exit: { opacity: 0, y: -10, height: 0 },
+  };
 
   return (
     <motion.nav
@@ -20,13 +28,13 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Brand */}
         <h1 className="font-bold text-2xl text-[var(--foreground)]">
-          <a href="/" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold">
             muhammadrafi.dev
-          </a>
+          </Link>
         </h1>
 
-        {/* Menu Links */}
-        <div className="flex items-center space-x-6 font-medium text-[var(--foreground)] transition-colors">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-6 font-medium text-[var(--foreground)] transition-colors">
           <Link href="/" className="hover:text-indigo-500">
             Home
           </Link>
@@ -52,7 +60,58 @@ export default function Navbar() {
             </button>
           )}
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          className="md:hidden text-2xl text-[var(--foreground)]"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
+
+      {/* Mobile Menu Animated */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={menuVariants}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-[var(--background)] border-t border-gray-300 dark:border-gray-700 overflow-hidden"
+          >
+            <div className="flex flex-col p-4 space-y-4 text-[var(--foreground)] font-medium">
+              <Link href="/" className="hover:text-indigo-500" onClick={() => setOpen(false)}>
+                Home
+              </Link>
+              <Link href="/about" className="hover:text-indigo-500" onClick={() => setOpen(false)}>
+                About
+              </Link>
+              <Link href="/projects" className="hover:text-indigo-500" onClick={() => setOpen(false)}>
+                Projects
+              </Link>
+              <Link href="/contact" className="hover:text-indigo-500" onClick={() => setOpen(false)}>
+                Contact
+              </Link>
+
+              {/* Theme Toggle */}
+              {mounted && (
+                <button
+                  onClick={() => {
+                    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+                    setOpen(false);
+                  }}
+                  className="px-3 py-1 rounded-md border border-[var(--foreground)] text-[var(--foreground)] text-sm hover:bg-[var(--foreground)] hover:text-[var(--background)]"
+                >
+                  {resolvedTheme === "dark" ? "☀️ Light" : "🌙 Dark"}
+                </button>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

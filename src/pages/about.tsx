@@ -1,7 +1,15 @@
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 export default function About() {
   return (
+    <>
+     <SEO 
+        title="About Me | Muhammad Rafi" 
+        description="Learn more about Muhammad Rafi — Android developer, backend enthusiast, and archery lover." 
+        url="https://muhammadrafi.dev/about"
+      />
     <motion.section
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
@@ -45,5 +53,7 @@ export default function About() {
         ))}
       </div>
     </motion.section>
+    </>
+
   );
 }
