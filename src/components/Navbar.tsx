@@ -9,6 +9,14 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
 
+  const navbarLists = [
+    { title: "Home", href: "/" },
+    { title: "About", href: "/about" },
+    { title: "Projects", href: "/projects" },
+    { title: "Articles", href: "/articles" },
+    { title: "Contact", href: "/contact" },
+  ];
+
   // biar nggak error pas SSR
   useEffect(() => setMounted(true), []);
 
@@ -35,21 +43,12 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6 font-medium text-[var(--foreground)] transition-colors">
-          <Link href="/" className="hover:text-indigo-500">
-            Home
-          </Link>
-          <Link href="/about" className="hover:text-indigo-500">
-            About
-          </Link>
-          <Link href="/projects" className="hover:text-indigo-500">
-            Projects
-          </Link>
-          <Link href="/articles" className="hover:text-indigo-500">
-            Articles
-          </Link>
-          <Link href="/contact" className="hover:text-indigo-500">
-            Contact
-          </Link>
+          {navbarLists.map((item) => (
+            <Link key={item.title} href={item.href} className="hover:text-indigo-500">
+              {item.title}
+            </Link>
+          ))}
+          
 
           {/* Theme Toggle */}
           {mounted && (
@@ -86,18 +85,16 @@ export default function Navbar() {
             className="md:hidden bg-[var(--background)] border-t border-gray-300 dark:border-gray-700 overflow-hidden"
           >
             <div className="flex flex-col p-4 space-y-4 text-[var(--foreground)] font-medium">
-              <Link href="/" className="hover:text-indigo-500" onClick={() => setOpen(false)}>
-                Home
-              </Link>
-              <Link href="/about" className="hover:text-indigo-500" onClick={() => setOpen(false)}>
-                About
-              </Link>
-              <Link href="/projects" className="hover:text-indigo-500" onClick={() => setOpen(false)}>
-                Projects
-              </Link>
-              <Link href="/contact" className="hover:text-indigo-500" onClick={() => setOpen(false)}>
-                Contact
-              </Link>
+              {navbarLists.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="hover:text-indigo-500"
+                  onClick={() => setOpen(false)} // Close menu on link click
+                >
+                  {item.title}
+                </Link>
+              ))}
 
               {/* Theme Toggle */}
               {mounted && (
