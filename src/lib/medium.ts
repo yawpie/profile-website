@@ -43,7 +43,7 @@ interface UserArticlesResponse {
 
 export async function fetchUserArticles(userId: string) {
   const response = await fetch(
-    `https://medium2.p.rapidapi.com/user/${userId}/articles`,
+    ``,// https://medium2.p.rapidapi.com/user/${userId}/articles
     {
       method: "GET",
       headers: {
