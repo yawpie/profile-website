@@ -22,8 +22,8 @@ export default function Contact() {
     },
     {
       name: "Email",
-      href: "mailto:mail@muhammadrafi.dev",
-      text: "mail@muhammadrafi.dev",
+      href: "mailto:iammuhammadrafi@proton.me",
+      text: "iammuhammadrafi@proton.me",
       icon: <FaEnvelope />,
       bg: "bg-[var(--secondary)]",
       textColor: "text-[var(--secondary-foreground)]",
@@ -54,7 +54,7 @@ export default function Contact() {
       <SEO
         title="Contact Me | Muhammad Rafi"
         description="Let’s connect via GitHub, LinkedIn, Instagram, or email. Reach out and say hi!"
-        url="https://muhammadrafi.dev/contact"
+        url="https://iammuhammadrafi.my.id/contact"
       />
       <motion.section
         initial={{ y: 30, opacity: 0 }}

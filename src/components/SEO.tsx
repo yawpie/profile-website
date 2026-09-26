@@ -10,8 +10,8 @@ interface SEOProps {
 export default function SEO({
   title,
   description = "Muhammad Rafi — Android developer, backend enthusiast, exploring blockchain and cloud.",
-  url = "https://muhammadrafi.dev",
-  image = "https://muhammadrafi.dev/og-image.jpg",
+  url = "https://iammuhammadrafi.my.id",
+  image = "https://iammuhammadrafi.my.id/profile.jpg",
 }: SEOProps) {
   return (
     <Head>
@@ -21,6 +21,7 @@ export default function SEO({
 
       {/* Description */}
       <meta name="description" content={description} />
+      <link rel="canonical" href={url} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />

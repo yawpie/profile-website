@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Muhammad Rafi | Android & Backend Developer"
+        title="Muhammad Rafi | Software Engineer"
         description="Hi, I’m Rafi. Experienced in Android (Kotlin, Jetpack) and backend (Express.js, Prisma). Passionate about blockchain, cloud, and cybersecurity."
       />
       <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] flex flex-col items-center justify-center p-8">
@@ -40,7 +40,7 @@ export default function Home() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          Android & Backend Developer · Blockchain Learner · Archery Enthusiast
+          Software Engineer | Android & Backend Developer
         </motion.p>
 
         <motion.a

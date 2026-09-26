@@ -8,7 +8,7 @@ export default function ProjectsPage({ repos }: { repos: any[] }) {
       <SEO
         title="Projects | Muhammad Rafi"
         description="Explore my projects including Android apps, backend systems, and blockchain experiments."
-        url="https://muhammadrafi.dev/projects"
+        url="https://iammuhammadrafi.my.id/projects"
       />
       <motion.main
         className="min-h-screen p-8"

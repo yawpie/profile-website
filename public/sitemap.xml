@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Beranda: profil singkat Muhammad Rafi sebagai software engineer dan pengembang Android/backend. -->
+  <url>
+    <loc>https://iammuhammadrafi.my.id/</loc>
+  </url>
+  <!-- Tentang: pengalaman, minat, dan keterampilan di bidang Android, backend, serta riset sales force automation. -->
+  <url>
+    <loc>https://iammuhammadrafi.my.id/about</loc>
+  </url>
+  <!-- Kontak: tautan GitHub, email, LinkedIn, dan Instagram. -->
+  <url>
+    <loc>https://iammuhammadrafi.my.id/contact</loc>
+  </url>
+</urlset>

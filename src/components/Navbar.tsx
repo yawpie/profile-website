@@ -37,7 +37,7 @@ export default function Navbar() {
         {/* Brand */}
         <h1 className="font-bold text-2xl text-[var(--foreground)]">
           <Link href="/" className="text-xl font-bold">
-            muhammadrafi.dev
+            iammuhammadrafi.my.id
           </Link>
         </h1>
 
